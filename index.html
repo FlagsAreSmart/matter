@@ -74,7 +74,7 @@
 		
 
         const engine = Matter.Engine.create()
-        onKeyPress("space", () => {
+        onKeyDown("space", () => {
             add([
                 pos(width() * 0.518, 0),
                 rect(32, 32),
@@ -87,16 +87,24 @@
         })
 
         add([
-            pos(width() * 0.45, height() * 0.7),
-            rect(128, 32),
+            pos(width() + 32, height() * 0.5),
+            rect(64, height()),
             anchor("center"),
             color(0,0,255),
             matterRect(engine, {isStatic: true}),
         ])
 
         add([
-            pos(width() * 0.56, height() * 0.4),
-            rect(128, 32),
+            pos(-32, height() * 0.5),
+            rect(64, height()),
+            anchor("center"),
+            color(0,0,255),
+            matterRect(engine, {isStatic: true}),
+        ])
+
+        add([
+            pos(width() * 0.5, height() + 32),
+            rect(width(), 64),
             anchor("center"),
             color(0,0,255),
             matterRect(engine, {isStatic: true}),
